@@ -12,7 +12,7 @@ jobs:
 
       - add_ssh_keys:
           fingerprints:
-            - "4b:79:bb:a7:c8:a0:d9:4c:60:08:86:8d:7a:09:90:71"
+            - "a6:df:17:7d:f8:8b:18:94:4b:9e:6b:fc:16:70:bf:b6"
 
       # Set git profile
       - run:
@@ -27,7 +27,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: npm install
+      - run: yarn install
 
       - save_cache:
           paths:
@@ -35,4 +35,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # deploy it
-      - run: npm run deploy
+      - run: yarn deploy
