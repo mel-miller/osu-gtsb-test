@@ -2,33 +2,33 @@ version: 2
 jobs:
   build:
     docker:
+      # specify the version you desire here
       - image: circleci/node:latest
-    filters:
-      branches:
-        only: master
+
+    working_directory: ~/repo
+
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "xx:xx:xx:xx:11:22:33:44:55:66:77:88:99:xx:xx:xx"
       - checkout
+
+      # Set git profile
+      - run:
+          command: |
+            git config --global user.email "miller.2676@gmail.com"
+            git config --global user.name "M Miller"
+
+      # Download and cache dependencies
       - restore_cache:
           keys:
-            - dependencies-
+            - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
-            - dependencies-
-      - run:
-          name: Install
-          command: yarn install
+            - v1-dependencies-
+
+      - run: yarn install
+
       - save_cache:
           paths:
             - node_modules
-          key: dependencies-
-      - run:
-          name: Gatsby build site
-          command: yarn build
-      - run:
-          name: Prepare shell commands
-          command: cp .scripts/gatsby-deploy.sh ../ && chmod +x ../gatsby-deploy.sh
-      - run:
-          name: Run deploy scripts
-          command: ../gatsby-deploy.sh
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # deploy it
+      - run: yarn deploy
