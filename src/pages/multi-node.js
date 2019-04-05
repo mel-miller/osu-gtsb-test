@@ -23,7 +23,7 @@ class MultiNode extends React.Component {
 
 export default MultiNode
 
-export const newquery = graphql`
+export const query = graphql`
   query {
     one: nodePage(drupal_internal__nid: { eq: 1 }) {
       drupal_internal__nid
