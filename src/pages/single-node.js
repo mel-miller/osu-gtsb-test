@@ -5,13 +5,13 @@ import { graphql } from "gatsby"
 
 class SingleNode extends React.Component {
   render() {
-    const node5 = this.props.data.nodePage
+    const node = this.props.data.nodePage
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <div>
-          <h2>{node5.title}</h2>
-          <div dangerouslySetInnerHTML={{ __html: node5.body.value }} />
+          <h2>{node.title}</h2>
+          <div dangerouslySetInnerHTML={{ __html: node.body.value }} />
         </div>
       </Layout>
     )
@@ -21,7 +21,7 @@ class SingleNode extends React.Component {
 export default SingleNode
 
 export const query = graphql`
-  query pageQuery {
+  query {
     nodePage(drupal_internal__nid: { eq: 3 }) {
       drupal_internal__nid
       title
