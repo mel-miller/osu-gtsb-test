@@ -1,33 +1,19 @@
+import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import styled from "styled-components"
+import OsuNavbar from "./osu-navbar"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+  <header>
+    <OsuNavbar />
+    <Masthead>
+      <MastheadInner>
+        <SiteName>
+          <HomeLink to="/">{siteTitle}</HomeLink>
+        </SiteName>
+      </MastheadInner>
+    </Masthead>
   </header>
 )
 
@@ -40,3 +26,27 @@ Header.defaultProps = {
 }
 
 export default Header
+
+//styled components
+const Masthead = styled.div`
+  background: #202024;
+  margin-bottom: 2em;
+`
+
+const MastheadInner = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1.45rem 1.0875rem;
+`
+
+const SiteName = styled.h1`
+  margin: 0;
+`
+
+const HomeLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`
