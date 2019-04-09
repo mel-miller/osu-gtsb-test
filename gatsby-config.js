@@ -33,6 +33,15 @@ module.exports = {
         baseUrl: `http://dev-content-it-osu.pantheonsite.io`,
       },
     },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["capita", "proximanova"],
+          urls: ["https://www.osu.edu/assets/fonts/webfonts.css"],
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -62,6 +62,7 @@ const Navbar = styled.div`
   border-bottom: 5px solid #b00;
   background: #eaeaea;
   color: #202024;
+  font-family: "proximanova";
 `
 const NavbarInner = styled.div`
   margin: 0 auto;
@@ -79,6 +80,7 @@ const Links = styled.div`
 const List = styled.ul`
   margin: 0;
   margin-top: -2px;
+
   & li {
     font-size: 0.84375em;
     list-style: none;
