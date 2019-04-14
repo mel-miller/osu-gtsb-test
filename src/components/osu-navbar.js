@@ -20,17 +20,31 @@ const OsuNavbar = () => (
 
       <UnivLinks>
         <ul>
-          <UnivLink name="Help" link="http://www.osu.edu/help.php" />
-          <UnivLink name="BuckeyeLink" link="http://buckeyelink.osu.edu/" />
-          <UnivLink name="Map" link="http://www.osu.edu/map/" />
+          <UnivLink
+            name="Help"
+            link="http://www.osu.edu/help.php"
+            icon="resp-help"
+          />
+          <UnivLink
+            name="BuckeyeLink"
+            link="http://buckeyelink.osu.edu/"
+            icon="resp-buckeyelink"
+          />
+          <UnivLink name="Map" link="http://www.osu.edu/map/" icon="resp-map" />
           <UnivLink
             name="Find People"
             link="http://www.osu.edu/findpeople.php"
+            icon="resp-findpeople"
           />
-          <UnivLink name="Webmail" link="https://email.osu.edu/" />
+          <UnivLink
+            name="Webmail"
+            link="https://email.osu.edu/"
+            icon="resp-webmail"
+          />
           <UnivLink
             name="Search Ohio State"
             link="http://www.osu.edu/search/"
+            icon="resp-search"
           />
         </ul>
       </UnivLinks>

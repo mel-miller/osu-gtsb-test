@@ -3,9 +3,11 @@ import styled from "styled-components"
 
 export default class UnivLink extends Component {
   render() {
+    const { name, link, icon } = this.props
+
     return (
-      <ListItem>
-        <a href={this.props.link}>{this.props.name}</a>
+      <ListItem icon={icon}>
+        <a href={link}>{name}</a>
       </ListItem>
     )
   }
@@ -15,7 +17,7 @@ export default class UnivLink extends Component {
 const ListItem = styled.li`
   list-style: none;
   float: left;
-  margin-right: 0.875em;
+  margin-right: 1.125em;
   &:last-child {
     margin-right: 0;
   }
@@ -24,6 +26,18 @@ const ListItem = styled.li`
     text-decoration: none;
     &:hover {
       text-decoration: underline;
+    }
+
+    @media only screen and (max-width: 720px) {
+      height: 23px;
+      width: 23px;
+      display: block;
+      overflow: hidden;
+      text-indent: -999px;
+      background: ${props =>
+        `url(https://www.osu.edu/assets/web/navbar/osu_navbar/images/${
+          props.icon
+        }.png)`};
     }
   }
 `
