@@ -78,7 +78,11 @@ const Navbar = styled.div`
 
 const NavbarInner = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  padding: 0 1rem;
+
+  @media only screen and (min-width: 960px) {
+    max-width: 960px;
+  }
 `
 
 const UnivInfo = styled.div`
