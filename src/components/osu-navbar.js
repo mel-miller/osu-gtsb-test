@@ -89,14 +89,18 @@ const UnivInfo = styled.div`
 `
 
 const UnivName = styled.a`
-  height: 14px;
+  height: 16px;
   width: 80px;
   margin-left: 0;
+  margin-top: 2px;
   display: block;
   text-indent: -9999px;
   background: url(https://www.osu.edu/assets/web/navbar/osu_navbar/images/osu_name.png)
     0 0 no-repeat;
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  @media only screen and (max-width: 720px) and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (max-width: 720px) and (min--moz-device-pixel-ratio: 2),
+    only screen and (max-width: 720px) and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (max-width: 720px) and (min-device-pixel-ratio: 2) {
     background: url(https://www.osu.edu/assets/web/navbar/osu_navbar/images/osu_name@2x.png)
       0 0 no-repeat;
     background-size: contain;
@@ -106,7 +110,6 @@ const UnivLinks = styled.div`
   float: right;
   clear: none;
   padding: 1em 0 0;
-  margin-top: -2px;
 
   ul {
     margin: 0;

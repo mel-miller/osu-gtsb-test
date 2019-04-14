@@ -17,7 +17,7 @@ export default class UnivLink extends Component {
 const ListItem = styled.li`
   list-style: none;
   float: left;
-  margin-right: 1.125em;
+  margin-right: 0.9875em;
   &:last-child {
     margin-right: 0;
   }
@@ -31,13 +31,26 @@ const ListItem = styled.li`
     @media only screen and (max-width: 720px) {
       height: 23px;
       width: 23px;
+      margin-top: -2px;
       display: block;
       overflow: hidden;
       text-indent: -999px;
       background: ${props =>
         `url(https://www.osu.edu/assets/web/navbar/osu_navbar/images/${
           props.icon
-        }.png)`};
+        }.png) 0 0 no-repeat`};
+    }
+    @media only screen and (max-width: 720px) and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (max-width: 720px) and (min--moz-device-pixel-ratio: 2),
+      only screen and (max-width: 720px) and (-o-min-device-pixel-ratio: 2/1),
+      only screen and (max-width: 720px) and (min-device-pixel-ratio: 2) {
+      background-image: ${props =>
+        `url(https://www.osu.edu/assets/web/navbar/osu_navbar/images/${
+          props.icon
+        }@2x.png) !important`};
+      -webkit-background-size: 23px;
+      -moz-background-size: 23px;
+      background-size: 23px;
     }
   }
 `
