@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
+import UnivLink from "./univ-link"
+
 const OsuNavbar = () => (
   <Navbar
     role="navigation"
@@ -18,36 +20,18 @@ const OsuNavbar = () => (
 
       <UnivLinks>
         <ul>
-          <li>
-            <a href="http://www.osu.edu/help.php" class="help">
-              Help
-            </a>
-          </li>
-          <li>
-            <a href="http://buckeyelink.osu.edu/" class="buckeyelink">
-              BuckeyeLink
-            </a>
-          </li>
-          <li>
-            <a href="http://www.osu.edu/map/" class="map">
-              Map
-            </a>
-          </li>
-          <li>
-            <a href="http://www.osu.edu/findpeople.php" class="findpeople">
-              Find People
-            </a>
-          </li>
-          <li>
-            <a href="https://email.osu.edu/" class="webmail">
-              Webmail
-            </a>
-          </li>
-          <li>
-            <a href="http://www.osu.edu/search/" class="search">
-              Search Ohio State
-            </a>
-          </li>
+          <UnivLink name="Help" link="http://www.osu.edu/help.php" />
+          <UnivLink name="BuckeyeLink" link="http://buckeyelink.osu.edu/" />
+          <UnivLink name="Map" link="http://www.osu.edu/map/" />
+          <UnivLink
+            name="Find People"
+            link="http://www.osu.edu/findpeople.php"
+          />
+          <UnivLink name="Webmail" link="https://email.osu.edu/" />
+          <UnivLink
+            name="Search Ohio State"
+            link="http://www.osu.edu/search/"
+          />
         </ul>
       </UnivLinks>
     </NavbarInner>
@@ -112,21 +96,5 @@ const UnivLinks = styled.div`
 
   ul {
     margin: 0;
-
-    li {
-      list-style: none;
-      float: left;
-      margin-right: 0.875em;
-
-      &:last-child {
-        margin-right: 0;
-      }
-      a {
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
   }
 `
